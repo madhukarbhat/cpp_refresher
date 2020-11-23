@@ -19,3 +19,9 @@ void duplicate (int& a, int& b, int& c)
   c *= multiplier;
   return;
 }
+
+void fn ()
+{
+  std::cout << "Hello, World!" << std::endl;
+  return;
+}

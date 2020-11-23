@@ -13,7 +13,7 @@ OBJDIR = ./obj
 LIBDIR = ./lib
 
 # Define the C compiler to use
-CXX = /usr/bin/g++
+CXX = /usr/bin/c++
 
 # Define any compile-time flags - C++
 CXXFLAGS = -std=c++11 -Wall -g -O2
