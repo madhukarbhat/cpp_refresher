@@ -1,8 +1,14 @@
-#ifndef __FN_HPP_DEFINED
-#define __FN_HPP_DEFINED
+#ifndef FN_HPP_DEFINED__
+#define FN_HPP_DEFINED__
 
-void show_params (int& a, int& b, int& c);
-void duplicate (int& a, int& b, int& c);
-void fn ();
-
-#endif /*__FN_HPP_DEFINED*/
+class Ch00 {
+private:
+  void show_params (int& a, int& b, int& c);
+  void duplicate (int& a, int& b, int& c);
+  void fn ();
+public:
+  void call_duplicate ();
+  void call_fn ();
+};
+  
+#endif /*FN_HPP_DEFINED__*/
