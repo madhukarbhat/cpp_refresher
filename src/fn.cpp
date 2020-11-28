@@ -1,58 +1,44 @@
-#include <iostream>
-#include "fn.hpp"
+#include "fn.h"
 
 // ------------------------------------------------------------------------
-
-void Ch00::show_params (int& a, int& b, int& c)
+std::string GetLine()
 {
-  std::cout << "---------" << std::endl
-	    << "x = " << a << std::endl
-	    << "y = " << b << std::endl
-	    << "z = " << c << std::endl
-	    << "---------" << std::endl;
-  return;
+  std::string result;
+  getline(std::cin, result);
+  return result;
 }
 
 // ------------------------------------------------------------------------
 
-void Ch00::duplicate (int& a, int& b, int& c)
+int show_menu_return_choice()
 {
-  const int multiplier = 2;
-  a *= multiplier;
-  b *= multiplier;
-  c *= multiplier;
-  return;
-}
+  int choice = 0;
 
-// ------------------------------------------------------------------------
+  std::cout << std::endl
+            << "--------------------------------------------------"
+            << std::endl;
 
-void Ch00::fn ()
-{
-  std::cout << "Hello, World!" << std::endl;
-  return;
-}
+  std::cout << "Available options:" << std::endl;
+  int i = 0;
+  for (std::string choice : userChoice)
+  {
+    std::cout << i << " : " << choice << std::endl;
+    ++i;
+  }
+  std::cout << "Enter choice: ";
 
-// ------------------------------------------------------------------------
+  std::string usr_input;
+  getline(std::cin, usr_input);
+  std::stringstream(usr_input) >> choice;
 
-void Ch00::call_duplicate ()
-{
-  int x = 1, y = 3, z = 7;
-  std::cout << "Initial Values:" << std::endl;
-  show_params (x, y, z);
+  std::cout << std::endl
+            << "--------------------------------------------------"
+            << std::endl
+            << "Execution results:"
+            << std::endl
+            << std::endl;
 
-  duplicate (x, y, z);
-
-  std::cout << std::endl << "After function call:" << std::endl;
-  show_params (x, y, z);
-  return;
-}
-
-// ------------------------------------------------------------------------
-
-void Ch00::call_fn ()
-{
-  fn ();
-  return;
+  return choice;
 }
 
 // ------------------------------------------------------------------------

@@ -1,5 +1,5 @@
-#ifndef FN_HPP_DEFINED__
-#define FN_HPP_DEFINED__
+#ifndef CH00_HEADER_DEFINED__
+#define CH00_HEADER_DEFINED__
 
 class Ch00 {
 private:
@@ -11,4 +11,4 @@ public:
   void call_fn ();
 };
   
-#endif /*FN_HPP_DEFINED__*/
+#endif /*CH00_HEADER_DEFINED__*/
