@@ -109,3 +109,33 @@ bool Ch03::ans08_HasHexLetters()
   }
   return state;
 }
+
+// Takes in height of triangle and character to be printed to draw a triangle
+// whose base starts at the beginning of the line.
+void Ch03::ans09_DrawTriangle()
+{
+  int ht;
+  char ch;
+  std::stringstream converter;
+
+  std::cout << "[Input] Enter Height of the triangle: ";
+  converter << GetLine();
+  converter >> ht;
+
+  converter.str(std::string());
+  converter.clear();
+  std::cout << "[Input] Enter symbol to print the triangle with: ";
+  converter << GetLine();
+  converter >> ch;
+
+  for (int i = 0; i < ht; ++i)
+  {
+    std::cout << std::setfill(' ') << std::setw(ht - i) << ch;
+    if (i > 0)
+      std::cout << std::setfill(ch) << std::setw(i) << ch;
+
+    std::cout << std::setfill(ch) << std::setw(i+1) << ' ';
+    std::cout << std::endl;
+  }
+  return;
+}

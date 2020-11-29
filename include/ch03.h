@@ -10,6 +10,7 @@ public:
   std::string ans05_int_to_string(int in);
   double ans06_GetReal();
   bool ans08_HasHexLetters();
+  void ans09_DrawTriangle();
 };
 
 #endif /* CHAPTER03_HEADER_INCLUDED__*/

@@ -87,6 +87,12 @@ int main(int argc, char *argv[])
       ch03.ans08_HasHexLetters();
       break;
     }
+    case 7:
+    {
+      Ch03 ch03;
+      ch03.ans09_DrawTriangle();
+      break;
+    }
     default:
     {
       std::cout << command << " : Not a recognized option, try again."

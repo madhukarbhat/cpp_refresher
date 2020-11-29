@@ -23,8 +23,9 @@ const std::vector<std::string> userChoice = {
     "Execute fn()",
     "Execute duplicate()",
     "Execute write_file()",
-    "Execute Ch03 ans05_int_to_string(inp)",
+    "Execute Ch03 ans05_int_to_string()",
     "Execute Ch03 ans06_GetReal",
-    "Execute Ch03 ans08_HasHexLetters()"};
+    "Execute Ch03 ans08_HasHexLetters()",
+    "Execute Ch03 ans09_DrawTriangle()"};
 
 #endif /*MAIN_HEADER_DEFINED*/
