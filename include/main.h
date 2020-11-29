@@ -13,6 +13,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 
 #include "fn.h"
 #include "ch00.h"
@@ -26,6 +27,7 @@ const std::vector<std::string> userChoice = {
     "Execute Ch03 ans05_int_to_string()",
     "Execute Ch03 ans06_GetReal",
     "Execute Ch03 ans08_HasHexLetters()",
-    "Execute Ch03 ans09_DrawTriangle()"};
+    "Execute Ch03 ans09_DrawTriangle()",
+    "Execute Ch03 Ch03::ans10_OpenFile()"};
 
 #endif /*MAIN_HEADER_DEFINED*/

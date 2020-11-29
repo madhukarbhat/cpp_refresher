@@ -1,8 +1,3 @@
-#include <iostream>
-#include <fstream>
-#include <string>
-#include <sstream>
-
 #include "ch03.h"
 
 // This is solution to practice problem #1 in page #44
@@ -138,4 +133,31 @@ void Ch03::ans09_DrawTriangle()
     std::cout << std::endl;
   }
   return;
+}
+
+// Accepts an ifstream and returns an open ifstream to read data.
+void Ch03::ans10_OpenFile(std::ifstream& ifs)
+{
+  while (true)
+  {
+    std::string fname;
+    std::stringstream converter;
+    std::cout << "[Input] Enter file name to read: ";
+    converter << GetLine();
+    converter >> fname;
+
+    ifs.open(fname, std::ifstream::in);
+    if (ifs.good())
+    {
+      std::cout << "[Info] Opened " << fname << " successfully."
+                << std::endl;
+      return;
+    }
+    else
+    {
+      ifs.clear();
+      std::cout << "[Error] Could not open " << fname << ". Retry."
+                << std::endl;
+    }
+  }
 }

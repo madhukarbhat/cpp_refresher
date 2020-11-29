@@ -93,6 +93,13 @@ int main(int argc, char *argv[])
       ch03.ans09_DrawTriangle();
       break;
     }
+    case 8:
+    {
+      Ch03 ch03;
+      std::ifstream infile;
+      ch03.ans10_OpenFile(infile);
+      break;
+    }
     default:
     {
       std::cout << command << " : Not a recognized option, try again."
