@@ -46,16 +46,19 @@ std::string Ch03::ans05_int_to_string(int in)
 // PDF file.
 double Ch03::ans06_GetReal()
 {
-  double result;
+  double state = 0.0;
 
   // Read input until user enters valid data
   while (true)
   {
+    std::cout << "Enter a real number: ";
+
     std::stringstream converter;
     converter << GetLine();
 
-    /* Try reading an int, continue if we succeeded. */
-    int result;
+    double result;
+
+    /* Try reading an double, continue if we succeeded. */
     if (converter >> result)
     {
       char remaining;
@@ -65,8 +68,44 @@ double Ch03::ans06_GetReal()
         return result;
     }
     else
-      std::cout << "Please enter an integer." << std::endl;
-    std::cout << "Retry: ";
+      std::cout << "[Error] Cannot recognise the number, enter *real* number."
+                << std::endl;
+    std::cout << "Retry. ";
   }
-  return result;
+  return state;
+}
+
+// Takes in integer as input and tells if its Hex representation has 
+// alphabets.
+bool Ch03::ans08_HasHexLetters()
+{
+  bool state = true;
+  std::stringstream converter;
+  int num;
+
+  std::cout << "Enter an integer in decimal format: ";
+  converter << GetLine();
+  converter >> num;
+
+  converter.str(std::string());
+  converter.clear();
+  converter << std::dec << num;
+  std::cout << "Decimal    : " << converter.str() << std::endl;
+
+  converter.str(std::string());
+  converter.clear();
+  converter << std::hex << num;
+  std::cout << "Hexadecimal: " << converter.str() << std::endl;
+
+  int chknum;
+  if (converter >> std::dec >> chknum)
+  {
+    std::string remaining;
+    if (converter >> remaining)
+    {
+      std::cout << "[Info] Hex format of your number has Hex Letters."
+                << std::endl;
+    }
+  }
+  return state;
 }

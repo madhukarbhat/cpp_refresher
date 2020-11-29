@@ -65,6 +65,28 @@ int main(int argc, char *argv[])
 
       break;
     }
+    case 5:
+    {
+      Ch03 ch03;
+      double ret = ch03.ans06_GetReal();
+      if (ret != 0.0)
+      {
+        std::cout << "You Entered: " << ret << std::endl;
+      }
+      else
+      {
+        std::cout << "[Error] Unable to recognise the number, "
+                  << "unless you entered  0.0" 
+                  << std::endl;
+      }
+      break;
+    }
+    case 6:
+    {
+      Ch03 ch03;
+      ch03.ans08_HasHexLetters();
+      break;
+    }
     default:
     {
       std::cout << command << " : Not a recognized option, try again."
