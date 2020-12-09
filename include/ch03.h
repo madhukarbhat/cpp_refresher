@@ -2,6 +2,7 @@
 #define CHAPTER03_HEADER_INCLUDED__
 
 #include <iostream>
+#include <iomanip>
 #include <fstream>
 #include <string>
 #include <sstream>

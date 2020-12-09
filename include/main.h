@@ -18,8 +18,10 @@
 #include "fn.h"
 #include "ch00.h"
 #include "ch03.h"
+#include "ch04.h"
 
-const std::vector<std::string> userChoice = {
+const std::vector<std::string> userChoice = 
+{
     "Exit",
     "Execute fn()",
     "Execute duplicate()",
@@ -28,6 +30,7 @@ const std::vector<std::string> userChoice = {
     "Execute Ch03 ans06_GetReal",
     "Execute Ch03 ans08_HasHexLetters()",
     "Execute Ch03 ans09_DrawTriangle()",
-    "Execute Ch03 Ch03::ans10_OpenFile()"};
+    "Execute Ch03 Ch03::ans10_OpenFile()"
+};
 
 #endif /*MAIN_HEADER_DEFINED*/
