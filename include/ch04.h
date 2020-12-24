@@ -30,4 +30,7 @@ struct Length ReadLength();
 // Solution to question 12(e)
 std::string GetUnitType (Length  len);
 
+// Solution to question 12(f)
+void PrintLength(Length len);
+
 #endif /* CHAPTER04_HEADER_INCLUDED__*/

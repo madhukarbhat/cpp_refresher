@@ -32,7 +32,8 @@ const std::vector<std::string> userChoice =
     "Execute Ch03 ans09_DrawTriangle()",
     "Execute Ch03 Ch03::ans10_OpenFile()",
     "Execute Ch04 ReadLength()",
-    "Execute Ch04 GetUnitType()"
+    "Execute Ch04 GetUnitType()",
+    "Execute Ch04 PrintLength()"
 };
 
 #endif /*MAIN_HEADER_DEFINED*/

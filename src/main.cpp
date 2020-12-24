@@ -113,6 +113,12 @@ int main(int argc, char *argv[])
 	    std::cout << "Unit System : " << unitSystem << std::endl;
 	    break;
 	}
+	case 11:
+	{
+	    Length l = ReadLength();
+	    PrintLength(l);
+	    break;
+	}
         default:
         {
             std::cout << command << " : Not a recognized option, try again."

@@ -81,12 +81,34 @@ struct Length ReadLength()
 // Solution to question 12(e)
 std::string GetUnitType (Length  len)
 {
-#define DEFINE_UNIT(UnitName, scale, sufx, system) if ( len.unit == eLengthUnit_##sufx ) { return #system; }
+#define DEFINE_UNIT(UnitName, scale, sufx, system) if ( len.unit == eLengthUnit_##sufx ) \
+    { return #system; }
 #include "units.h"
 #undef DEFINE_UNIT
 
     return "ERROR";
 }
+
+
+// ------------------------------------------------------------------------
+// Solution to question 12(f)
+void PrintLength(Length len)
+{
+    std::string lenSuffix;
+    std::string lenUnitName;
+    
+#define DEFINE_UNIT(UnitName, scale, sufx, system) if ( len.unit == eLengthUnit_##sufx ) \
+    { lenSuffix = #sufx; lenUnitName = #UnitName; }
+#include "units.h"
+#undef DEFINE_UNIT
+
+    std::cout << "[output] " << len.data << " " << lenSuffix
+	      << " ( " << len.data << " " << lenUnitName << " )"
+	      << std::endl;
+    return;
+}
+
+
 
 // ------------------------------------------------------------------------
 // End
