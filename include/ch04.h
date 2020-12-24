@@ -10,7 +10,7 @@
 
 // Solution to question 12(b)
 enum LengthUnit {
-    #define DEFINE_UNIT(UnitName, unit, suffix, system) eLengthUnit_##suffix, 
+    #define DEFINE_UNIT(UnitName, scale, suffix, system) eLengthUnit_##suffix, 
     #include "units.h"
     #undef DEFINE_UNIT
 };
@@ -26,5 +26,8 @@ LengthUnit SuffixStringToLengthUnit(std::string suf);
 
 // Solution to question 12(d)
 struct Length ReadLength();
+
+// Solution to question 12(e)
+std::string GetUnitType (Length  len);
 
 #endif /* CHAPTER04_HEADER_INCLUDED__*/

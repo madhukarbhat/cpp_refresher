@@ -1,15 +1,17 @@
 #include "ch04.h"
 
+// ------------------------------------------------------------------------
 // Solution to question 12(c)
 LengthUnit SuffixStringToLengthUnit(std::string suf)
 {
-#define DEFINE_UNIT(unit, scale, sufx, system) if ( suf == #sufx) { return eLengthUnit_##sufx; }
+#define DEFINE_UNIT(UnitName, scale, sufx, system) if ( suf == #sufx) { return eLengthUnit_##sufx; }
 #include "units.h"
 #undef DEFINE_UNIT
 
     return eLengthUnit_ERROR;
 }
 
+// ------------------------------------------------------------------------
 // Solution to question 12(d)
 struct Length ReadLength()
 {
@@ -74,3 +76,17 @@ struct Length ReadLength()
   }
   return len;
 }
+
+// ------------------------------------------------------------------------
+// Solution to question 12(e)
+std::string GetUnitType (Length  len)
+{
+#define DEFINE_UNIT(UnitName, scale, sufx, system) if ( len.unit == eLengthUnit_##sufx ) { return #system; }
+#include "units.h"
+#undef DEFINE_UNIT
+
+    return "ERROR";
+}
+
+// ------------------------------------------------------------------------
+// End

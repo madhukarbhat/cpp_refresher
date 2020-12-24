@@ -106,6 +106,13 @@ int main(int argc, char *argv[])
 	    std::cout << "Length: " << l.data << " " << l.unit << std::endl;
 	    break;
         }
+	case 10:
+	{
+	    Length l = ReadLength();
+	    std::string unitSystem = GetUnitType(l);
+	    std::cout << "Unit System : " << unitSystem << std::endl;
+	    break;
+	}
         default:
         {
             std::cout << command << " : Not a recognized option, try again."
