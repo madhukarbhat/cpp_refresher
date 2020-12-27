@@ -119,6 +119,12 @@ int main(int argc, char *argv[])
 	    PrintLength(l);
 	    break;
 	}
+	case 12:
+	{
+	    Length l = ReadLength();
+	    std::cout << "[Output] " << ConvertToMeters(l) << " m" << std::endl;
+	    break;
+	}
         default:
         {
             std::cout << command << " : Not a recognized option, try again."

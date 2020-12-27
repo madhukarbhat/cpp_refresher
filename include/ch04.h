@@ -33,4 +33,7 @@ std::string GetUnitType (Length  len);
 // Solution to question 12(f)
 void PrintLength(Length len);
 
+// Solution to question 12(g)
+double ConvertToMeters(Length len);
+
 #endif /* CHAPTER04_HEADER_INCLUDED__*/

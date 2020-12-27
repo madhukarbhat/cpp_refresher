@@ -109,6 +109,21 @@ void PrintLength(Length len)
 }
 
 
-
+// ------------------------------------------------------------------------
+// Solution to question 12(g)
+double ConvertToMeters(Length len)
+{
+  switch (len.unit)
+  {
+#define DEFINE_UNIT(UnitName, scale, sufx, system) case eLengthUnit_##sufx: return (len.data * ( scale ));
+#include "units.h"
+#undef DEFINE_UNIT
+  default:
+  {
+      std::cerr << "[Error] Cannot recognise unit." << std::endl;
+  }
+  }
+  return -1.0;
+}
 // ------------------------------------------------------------------------
 // End
