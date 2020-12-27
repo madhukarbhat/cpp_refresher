@@ -10,15 +10,15 @@
 
 // Solution to question 12(b)
 enum LengthUnit {
-    #define DEFINE_UNIT(UnitName, scale, suffix, system) eLengthUnit_##suffix, 
-    #include "units.h"
-    #undef DEFINE_UNIT
+#define DEFINE_UNIT(UnitName, scale, suffix, system) eLengthUnit_##suffix, 
+#include "units.h"
+#undef DEFINE_UNIT
 };
 
 // Solution to question 12(d)
 struct Length {
-  double data;
-  LengthUnit unit;  
+    double data;
+    LengthUnit unit;  
 };
 
 // Solution to question 12(c)

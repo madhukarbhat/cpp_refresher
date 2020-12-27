@@ -17,64 +17,64 @@ struct Length ReadLength()
 {
     struct Length len = {0};
 
-  // Read input until user enters valid data
-  while (true)
-  {
-    std::cout << "Enter a length: ";
-
-    std::stringstream converter;
-    converter << GetLine();
-
-    // Accept and validate length value
-    double result;
-    
-    // Try reading an double, continue if we succeeded.
-    if (converter >> result)
+    // Read input until user enters valid data
+    while (true)
     {
-      char remaining;
-      if (converter >> remaining) // Something's left, input is invalid
-        std::cout << "Unexpected character: " << remaining << std::endl;
-      else
-      {
-          len.data = result;
-          break;
-      }
+        std::cout << "Enter a length: ";
+
+        std::stringstream converter;
+        converter << GetLine();
+
+        // Accept and validate length value
+        double result;
+    
+        // Try reading an double, continue if we succeeded.
+        if (converter >> result)
+        {
+            char remaining;
+            if (converter >> remaining) // Something's left, input is invalid
+                std::cout << "Unexpected character: " << remaining << std::endl;
+            else
+            {
+                len.data = result;
+                break;
+            }
+        }
+        else
+            std::cout << "[Error] Cannot recognise the number, enter *real* number."
+                      << std::endl;
+        std::cout << "Retry. ";
     }
-    else
-      std::cout << "[Error] Cannot recognise the number, enter *real* number."
-                << std::endl;
-    std::cout << "Retry. ";
-  }
 
-  // Read input until user enters valid data
-  while (true)
-  {
-      // Accept and validate length unit
-      std::cout << "Enter the length unit: ";
+    // Read input until user enters valid data
+    while (true)
+    {
+        // Accept and validate length unit
+        std::cout << "Enter the length unit: ";
 
-      std::string usrInput;
-      LengthUnit lu;
+        std::string usrInput;
+        LengthUnit lu;
 
-      std::stringstream converter;
-      converter << GetLine();
-      if (converter >> usrInput)
-      {
-          lu = SuffixStringToLengthUnit(usrInput);
-          if (lu == eLengthUnit_ERROR) {
-              std::cout << "Unrecognized Unit: " << usrInput << std::endl;
-          }
-          else
-          {
-              len.unit = lu;
-              return len;
-          }
-      }
-      else
-          std::cout << "[Error] Cannot recognise the unit, enter a valid unit."
-                    << std::endl;
-      std::cout << "Retry. ";
-  }
-  return len;
+        std::stringstream converter;
+        converter << GetLine();
+        if (converter >> usrInput)
+        {
+            lu = SuffixStringToLengthUnit(usrInput);
+            if (lu == eLengthUnit_ERROR) {
+                std::cout << "Unrecognized Unit: " << usrInput << std::endl;
+            }
+            else
+            {
+                len.unit = lu;
+                return len;
+            }
+        }
+        else
+            std::cout << "[Error] Cannot recognise the unit, enter a valid unit."
+                      << std::endl;
+        std::cout << "Retry. ";
+    }
+    return len;
 }
 
 // ------------------------------------------------------------------------
@@ -103,8 +103,8 @@ void PrintLength(Length len)
 #undef DEFINE_UNIT
 
     std::cout << "[output] " << len.data << " " << lenSuffix
-	      << " ( " << len.data << " " << lenUnitName << " )"
-	      << std::endl;
+              << " ( " << len.data << " " << lenUnitName << " )"
+              << std::endl;
     return;
 }
 
@@ -113,17 +113,17 @@ void PrintLength(Length len)
 // Solution to question 12(g)
 double ConvertToMeters(Length len)
 {
-  switch (len.unit)
-  {
+    switch (len.unit)
+    {
 #define DEFINE_UNIT(UnitName, scale, sufx, system) case eLengthUnit_##sufx: return (len.data * ( scale ));
 #include "units.h"
 #undef DEFINE_UNIT
-  default:
-  {
-      std::cerr << "[Error] Cannot recognise unit." << std::endl;
-  }
-  }
-  return -1.0;
+    default:
+    {
+        std::cerr << "[Error] Cannot recognise unit." << std::endl;
+    }
+    }
+    return -1.0;
 }
 // ------------------------------------------------------------------------
 // End
