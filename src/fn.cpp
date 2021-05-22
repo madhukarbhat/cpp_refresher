@@ -10,6 +10,32 @@ std::string GetLine()
 
 // ------------------------------------------------------------------------
 
+int GetInteger()
+{
+    while (true)
+    { 
+        // Read input until user enters valid data
+        std::stringstream converter;
+        converter << GetLine();
+
+        /* Try reading an int, continue if we succeeded. */
+        int result;
+        if (converter >> result)
+        {
+            char remaining;
+            if (converter >> remaining) // Something's left, input is invalid
+                std::cout << "Unexpected character: " << remaining << std::endl;
+            else
+                return result;
+        }
+        else
+            std::cout << "Please enter an integer." << std::endl;
+        std::cout << "Retry: ";
+    }
+    return -1;   
+}
+// ------------------------------------------------------------------------
+
 int show_menu_return_choice()
 {
     int choice = 0;

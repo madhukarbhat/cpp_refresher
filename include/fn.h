@@ -7,6 +7,7 @@
 #include "main.h"
 
 std::string GetLine();
+int GetInteger();
 int show_menu_return_choice ();
 
 #endif /*FN_HEADER_DEFINED__*/

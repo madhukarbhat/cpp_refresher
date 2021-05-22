@@ -128,7 +128,7 @@ int main(int argc, char *argv[])
         case 13:
         {
             std::cout << "[Input] Enter filename: ";
-            std::vector<std::string> fc = LinesFromFile(GetLine());
+            std::vector<std::string> fc = q5_LinesFromFile(GetLine());
             std::cout << "[Status] Completed reading, printing output:" << std::endl;
             long count = 0;
             for (std::string ln : fc) {
@@ -136,6 +136,11 @@ int main(int argc, char *argv[])
                 ++count;
             }
             std::cout << "[Status] End" << std::endl;
+            break;
+        }
+        case 14:
+        {
+            q6_reverse_sort();
             break;
         }
         default:

@@ -27,7 +27,8 @@ const std::vector<std::string> userChoice =
     "Execute Ch04 GetUnitType()",
     "Execute Ch04 PrintLength()",
     "Execute Ch04 ConvertToMeters()",
-    "Execute Ch05 Q#5 LinesFromFile()"
+    "Execute Ch05 Q#5 LinesFromFile()",
+    "Execute Ch05 Q#6 reverse_sort()"
 };
 
 #endif /*MAIN_HEADER_DEFINED*/

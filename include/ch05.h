@@ -9,7 +9,8 @@
 #include "fn.h"
 
 // Solution to Practice Problem #5
-std::vector<std::string> LinesFromFile(std::string filename);
-
+std::vector<std::string> q5_LinesFromFile(std::string filename);
+size_t InsertionIndex(std::vector<int>& v, int toInsert);
+void q6_reverse_sort ();
 
 #endif /* CHAPTER05_HEADER_INCLUDED__*/
