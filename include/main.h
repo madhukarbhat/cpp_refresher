@@ -10,6 +10,7 @@
 #include "ch00.h"
 #include "ch03.h"
 #include "ch04.h"
+#include "ch05.h"
 
 const std::vector<std::string> userChoice = 
 {
@@ -25,7 +26,8 @@ const std::vector<std::string> userChoice =
     "Execute Ch04 ReadLength()",
     "Execute Ch04 GetUnitType()",
     "Execute Ch04 PrintLength()",
-    "Execute Ch04 ConvertToMeters()"
+    "Execute Ch04 ConvertToMeters()",
+    "Execute Ch05 Q#5 LinesFromFile()"
 };
 
 #endif /*MAIN_HEADER_DEFINED*/

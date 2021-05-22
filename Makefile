@@ -82,3 +82,15 @@ depend: $(SRCS)
 	makedepend $(INCLUDES) $^
 
 # DO NOT DELETE THIS LINE -- make depend needs it
+
+src/ch03.o: ./include/ch03.h ./include/fn.h ./include/main.h ./include/ch00.h
+src/ch03.o: ./include/ch04.h ./include/units.h ./include/ch05.h
+src/ch00.o: ./include/ch00.h
+src/fn.o: ./include/fn.h ./include/main.h ./include/ch00.h ./include/ch03.h
+src/fn.o: ./include/ch04.h ./include/units.h ./include/ch05.h
+src/ch05.o: ./include/ch05.h ./include/fn.h ./include/main.h ./include/ch00.h
+src/ch05.o: ./include/ch03.h ./include/ch04.h ./include/units.h
+src/ch04.o: ./include/ch04.h ./include/fn.h ./include/main.h ./include/ch00.h
+src/ch04.o: ./include/ch03.h ./include/ch05.h ./include/units.h
+src/main.o: ./include/main.h ./include/fn.h ./include/ch00.h ./include/ch03.h
+src/main.o: ./include/ch04.h ./include/units.h ./include/ch05.h

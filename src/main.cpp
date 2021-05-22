@@ -76,7 +76,7 @@ int main(int argc, char *argv[])
             else
             {
                 std::cout << "[Error] Unable to recognise the number, "
-                          << "unless you entered  0.0" 
+                          << "unless you entered  0.0"
                           << std::endl;
             }
             break;
@@ -102,29 +102,42 @@ int main(int argc, char *argv[])
         }
         case 9:
         {
-	    Length l = ReadLength();
-	    std::cout << "Length: " << l.data << " " << l.unit << std::endl;
-	    break;
+            Length l = ReadLength();
+            std::cout << "Length: " << l.data << " " << l.unit << std::endl;
+            break;
         }
-	case 10:
-	{
-	    Length l = ReadLength();
-	    std::string unitSystem = GetUnitType(l);
-	    std::cout << "Unit System : " << unitSystem << std::endl;
-	    break;
-	}
-	case 11:
-	{
-	    Length l = ReadLength();
-	    PrintLength(l);
-	    break;
-	}
-	case 12:
-	{
-	    Length l = ReadLength();
-	    std::cout << "[Output] " << ConvertToMeters(l) << " m" << std::endl;
-	    break;
-	}
+        case 10:
+        {
+            Length l = ReadLength();
+            std::string unitSystem = GetUnitType(l);
+            std::cout << "Unit System : " << unitSystem << std::endl;
+            break;
+        }
+        case 11:
+        {
+            Length l = ReadLength();
+            PrintLength(l);
+            break;
+        }
+        case 12:
+        {
+            Length l = ReadLength();
+            std::cout << "[Output] " << ConvertToMeters(l) << " m" << std::endl;
+            break;
+        }
+        case 13:
+        {
+            std::cout << "[Input] Enter filename: ";
+            std::vector<std::string> fc = LinesFromFile(GetLine());
+            std::cout << "[Status] Completed reading, printing output:" << std::endl;
+            long count = 0;
+            for (std::string ln : fc) {
+                std::cout << "[" << std::setw(3) << count << "] " << ln << std::endl;
+                ++count;
+            }
+            std::cout << "[Status] End" << std::endl;
+            break;
+        }
         default:
         {
             std::cout << command << " : Not a recognized option, try again."
